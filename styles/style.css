@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 0 20px 30px 0;
+    line-height: 1.4;
+}
+
+#logo>img {
+    max-width: 170px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, .5) !important;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, .75) !important;
+}
+
+#myNavbar {
+    background-color: black !important;
+}
+
+.row ul {
+    margin-bottom: 0;
+    padding-left: 10px;
+    padding-top: 4px;
+}
+
+#speed {
+    margin-left: 35px;
+}
+
+#newArray {
+    height: 40px;
+    margin-top: 5px;
+}
+
+.flex-container {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    transition: 2s all ease;
+}
+
+.flex-item {
+    background: cyan;
+    border: 1pt solid black;
+    width: 10px;
+    transition: 0.1s all ease;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+#input {
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.show {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.btn-outline-primary {
+    color: #FF675D;
+    border-color: #FF675D;
+    width: 100%;
+    border-top: 0;
+}
+
+.btn-outline-success {
+    color: #FF675D;
+    border-color: #FF675D;
+}
+
+.btn-outline-success:hover {
+    border-color: #FF675D;
+    background-color: #FF675D;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #FF675D;
+    border-color: #FF675D;
+}
