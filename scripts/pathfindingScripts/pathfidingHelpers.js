@@ -15,6 +15,7 @@ var totalCols = 70;
 var inProgress = false;
 //var initialMessage = "Click or drag cells to build walls! Press start when you finish and have selected an algorithm!";
 var cellsToAnimate = [];
+var weights = [];
 var createWalls = false;
 var algorithm = null;
 var justFinished = false;
@@ -219,7 +220,10 @@ $("#clearBtn").click(function () {
 	if (inProgress) { update("wait"); return; }
 	clearBoard(keepWalls = false);
 });
-
+$("#clearPath").click(function () {
+	if (inProgress) { update("wait"); return; }
+	clearBoard(keepWalls = true);
+});
 
 /* --------------------- */
 /* --- NAV BAR MENUS --- */
@@ -256,6 +260,8 @@ $("#mazes .btn-common").click(function () {
 		stairMaze();
 	} else if (maze == "Binary Tree Maze") {
 		binaryTreeMaze();
+	} else if (maze == "Simple Weighted Maze") {
+		SimpleWeighted();
 	}
 	console.log("Maze has been changd to: " + maze);
 });

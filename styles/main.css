@@ -104,6 +104,14 @@ a:hover {
 	border-color: #34495e;
 }
 
+.weight {
+	transition: background-color 0.1s ease-in-out;
+	/* background-color: cyan;
+	border-color: cyan; */
+	background-image: url(../images/weight.svg);
+	background-size: cover;
+}
+
 .none {
 	transition: background-color 0.1s ease-in-out;
 	background-color: white;
