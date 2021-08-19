@@ -1,9 +1,9 @@
-async function insertion(){
+async function insertion() {
     console.log('In insertion()');
     const ele = document.querySelectorAll(".bar");
     // color
     ele[0].style.background = 'green';
-    for(let i = 1; i < ele.length; i++){
+    for (let i = 1; i < ele.length; i++) {
         console.log('In ith loop');
         let j = i - 1;
         let key = ele[i].style.height;
@@ -12,7 +12,7 @@ async function insertion(){
 
         await waitforme(delay);
 
-        while(j >= 0 && (parseInt(ele[j].style.height) > parseInt(key))){
+        while (j >= 0 && (parseInt(ele[j].style.height) > parseInt(key))) {
             console.log('In while loop');
             // color
             ele[j].style.background = 'blue';
@@ -22,18 +22,18 @@ async function insertion(){
             await waitforme(delay);
 
             // color
-            for(let k = i; k >= 0; k--){
-                ele[k].style.background = 'green';
+            for (let k = i; k >= 0; k--) {
+                ele[k].style.background = '#1abc9c';
             }
         }
         ele[j + 1].style.height = key;
         // color
-        ele[i].style.background = 'green';
+        ele[i].style.background = '#1abc9c';
     }
 }
 
 const inSortbtn = document.querySelector(".insertionSort");
-inSortbtn.addEventListener('click', async function(){
+inSortbtn.addEventListener('click', async function () {
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
