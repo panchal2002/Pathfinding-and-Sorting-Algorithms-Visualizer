@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/ve-removebg-preview.png">
+    <link rel="icon" href="images/VE.png">
     <title>Sorting Visualizer</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,13 +13,13 @@
 </head>
 
 
-<body class="p-3 mb-2 bg-dark text-white">
+<body class="p-3 mb-2 text-white">
 
     <header>
 
 
-        <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark" id="myNavbar">
-            <a class="navbar-brand" href="index.html" id="logo"><img src="images/VisEffect3.png" alt="VisEffect"></a>
+        <nav class="navbar navbar-expand-sm fixed-top" id="myNavbar">
+            <a class="navbar-brand" href="index.html" id="logo"><img src="images/VisEffect.png" alt="VisEffect"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,23 +28,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class=" row">
                     <ul class=" dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="dropdown-toggle btn-common" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Algorithms
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <button type="button" class="btn btn-outline-primary btn-dark bubbleSort">Bubble
+                            <button type="button" class="dropdown-style btn-common bubbleSort">Bubble
                                 Sort</button>
-                            <button type="button" class="btn btn-outline-primary btn-dark selectionSort">Selection
+                            <button type="button" class="dropdown-style btn-common selectionSort">Selection
                                 Sort</button>
-                            <button type="button" class="btn btn-outline-primary btn-dark insertionSort">Insertion
+                            <button type="button" class="dropdown-style btn-common insertionSort">Insertion
                                 Sort</button>
-                            <button type="button" class="btn btn-outline-primary btn-dark quickSort">Quick Sort</button>
-                            <button type="button" class="btn btn-outline-primary btn-dark mergeSort">Merge Sort</button>
+                            <button type="button" class="dropdown-style btn-common quickSort">Quick Sort</button>
+                            <button type="button" class="dropdown-style btn-common mergeSort">Merge Sort</button>
                         </div>
                     </ul>
                     <div class="col gap-2 d-sm-flex" id="newArray">
-                        <button type="button" class="btn btn-outline-success btn-dark newArray">New Array</button>
+                        <!-- <button type="button" class="btn btn-outline-success btn-dark newArray">New Array</button> -->
+                        <button type="button" class="btn-common newArray">New Array</button>
                     </div>
 
                     <div class="col" id="input">
@@ -57,7 +58,7 @@
                     </div>
                 </div>
 
-                <a class="btn btn-outline-success btn-space ml-auto" href="index.html">Pathfinding
+                <a class="btn-common pathfinding-vis" href="index.html">Pathfinding
                     Visualizer</a>
                 <!-- <button class="btn btn-outline-success btn-space" type="submit" id="startBtn">Start</button>
                 <button type="button" class="btn btn-outline-warning btn-space" type="submit" id="clearBtn">Clear
