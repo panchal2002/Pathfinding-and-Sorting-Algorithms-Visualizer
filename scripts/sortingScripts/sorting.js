@@ -5,7 +5,6 @@ function swap(el1, el2) {
     let temp = el1.style.height;
     el1.style.height = el2.style.height;
     el2.style.height = temp;
-
 }
 
 // Disables sorting buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
