@@ -2,10 +2,10 @@ async function SimpleWeighted() {
     inProgress = true;
     clearBoard(keepWalls = false);
     var visited = createVisited();
-    var walls = makeWalls();
+    var weightWalls = makeWalls();
     var cells = [startCell, endCell];
-    walls[startCell[0]][startCell[1]] = false;
-    walls[endCell[0]][endCell[1]] = false;
+    weightWalls[startCell[0]][startCell[1]] = false;
+    weightWalls[endCell[0]][endCell[1]] = false;
     visited[startCell[0]][startCell[1]] = true;
     visited[endCell[0]][endCell[1]] = true;
     while (cells.length > 0) {
@@ -14,8 +14,8 @@ async function SimpleWeighted() {
         cells[random] = cells[cells.length - 1];
         cells.pop();
         var neighbors = getNeighbors(randomCell[0], randomCell[1]);
-        if (neighborsThatAreWalls(neighbors, walls) < 2) { continue; }
-        walls[randomCell[0]][randomCell[1]] = false;
+        if (neighborsThatAreWalls(neighbors, weightWalls) < 2) { continue; }
+        weightWalls[randomCell[0]][randomCell[1]] = false;
         for (var k = 0; k < neighbors.length; k++) {
             var i = neighbors[k][0];
             var j = neighbors[k][1];
@@ -29,10 +29,12 @@ async function SimpleWeighted() {
     for (var i = 0; i < totalRows; i++) {
         let row = [];
         for (var j = 0; j < totalCols; j++) {
-            if (walls[i][j]) {
+            if (weightWalls[i][j]) {
                 cellsToAnimate.push([[i, j], "weight"]);
-                var randomWeight = Math.floor(Math.random() * (10)) + 1;
+                var randomWeight = Math.floor(Math.random() * (20)) + 1;
                 row.push(randomWeight);
+            } else {
+                row.push(1);
             }
         }
         weights.push(row);

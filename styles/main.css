@@ -121,13 +121,13 @@ a:hover {
 .searching {
 	transition: background-color 0.08s ease-in-out;
 	background-color: #1cd4b5;
-	border-color: #1cd4b5;
+	border-color: #79d9ce;
 }
 
 .visited {
 	transition: background-color 0.08s ease-in-out;
 	background-color: #e89440;
-	border-color: #e89440;
+	border-color: #79d9ce;
 }
 
 .success {

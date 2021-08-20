@@ -25,7 +25,7 @@ function AStar() {
             var m = neighbors[k][0];
             var n = neighbors[k][1];
             if (visited[m][n]) { continue; }
-            var newDistance = distances[i][j] + 1;
+            var newDistance = distances[i][j] + (weights.length != 0 ? weights[m][n] : 1);
             if (newDistance < distances[m][n]) {
                 distances[m][n] = newDistance;
                 prev[m][n] = [i, j];

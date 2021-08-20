@@ -22,7 +22,7 @@ var justFinished = false;
 var animationSpeed = "Fast";
 var animationState = null;
 var startCell = [11, 15];
-var endCell = [11, 25];
+var endCell = [11, 55];
 var movingStart = false;
 var movingEnd = false;
 
@@ -143,7 +143,7 @@ $("td").mousedown(function () {
 	if (!inProgress) {
 		// Clear board if just finished
 		if (justFinished && !inProgress) {
-			clearBoard(keepWalls = true);
+			clearBoard(keepWalls = true, keepWeights = true);
 			justFinished = false;
 		}
 		if (index == startCellIndex) {
@@ -172,10 +172,10 @@ $("td").mouseenter(function () {
 	var endCellIndex = (endCell[0] * (totalCols)) + endCell[1];
 	if (!inProgress) {
 		if (justFinished) {
-			clearBoard(keepWalls = true);
+			clearBoard(keepWalls = true, keepWeights = true);
 			justFinished = false;
 		}
-		console.log("Cell index = " + index);
+		// console.log("Cell index = " + index);
 		if (movingStart && index != endCellIndex) {
 			moveStartOrEnd(startCellIndex, index, "start");
 		} else if (movingEnd && index != startCellIndex) {
@@ -193,7 +193,7 @@ $("td").click(function () {
 	var endCellIndex = (endCell[0] * (totalCols)) + endCell[1];
 	if ((inProgress == false) && !(index == startCellIndex) && !(index == endCellIndex)) {
 		if (justFinished) {
-			clearBoard(keepWalls = true);
+			clearBoard(keepWalls = true, keepWeights = true);
 			justFinished = false;
 		}
 		$(this).toggleClass("wall");
@@ -218,11 +218,11 @@ $("#startBtn").click(function () {
 
 $("#clearBtn").click(function () {
 	if (inProgress) { update("wait"); return; }
-	clearBoard(keepWalls = false);
+	clearBoard(keepWalls = false, keepWeights = false);
 });
 $("#clearPath").click(function () {
 	if (inProgress) { update("wait"); return; }
-	clearBoard(keepWalls = true);
+	clearBoard(keepWalls = true, keepWeights = true);
 });
 
 /* --------------------- */
@@ -280,7 +280,7 @@ function moveStartOrEnd(prevIndex, newIndex, startOrEnd) {
 		endCell = [newCellX, newCellY];
 		console.log("Moving end to [" + newCellX + ", " + newCellY + "]")
 	}
-	clearBoard(keepWalls = true);
+	clearBoard(keepWalls = true, keepWeights = true);
 	return;
 }
 
@@ -374,7 +374,7 @@ function countLength() {
 
 async function traverseGraph(algorithm) {
 	inProgress = true;
-	clearBoard(keepWalls = true);
+	clearBoard(keepWalls = true, keepWeights = true);
 	var startTime = Date.now();
 	var pathFound = executeAlgo();
 	var endTime = Date.now();
@@ -513,8 +513,9 @@ async function animateCells() {
 		// Wait until its time to animate
 		await new Promise(resolve => setTimeout(resolve, delay));
 
-		$(cell).removeClass();
+		// $(cell).removeClass();
 		$(cell).addClass(colorClass);
+		// $(cell).addClass("weight");
 	}
 	cellsToAnimate = [];
 	//console.log("End of animation has been reached!");
@@ -564,12 +565,13 @@ function getDelay() {
 	return delay;
 }
 
-function clearBoard(keepWalls) {
+function clearBoard(keepWalls, keepWeights) {
 	var cells = $("#tableContainer").find("td");
 	var startCellIndex = (startCell[0] * (totalCols)) + startCell[1];
 	var endCellIndex = (endCell[0] * (totalCols)) + endCell[1];
 	for (var i = 0; i < cells.length; i++) {
 		isWall = $(cells[i]).hasClass("wall");
+		isWeight = $(cells[i]).hasClass("weight");
 		$(cells[i]).removeClass();
 		if (i == startCellIndex) {
 			$(cells[i]).addClass("start");
@@ -577,7 +579,12 @@ function clearBoard(keepWalls) {
 			$(cells[i]).addClass("end");
 		} else if (keepWalls && isWall) {
 			$(cells[i]).addClass("wall");
+		} else if (keepWeights && isWeight) {
+			$(cells[i]).addClass("weight");
 		}
+	}
+	if (keepWeights == false) {
+		weights = [];
 	}
 }
 
