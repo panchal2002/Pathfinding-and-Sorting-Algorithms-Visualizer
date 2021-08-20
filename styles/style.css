@@ -115,27 +115,3 @@ a:hover {
     padding-top: 0;
     padding-bottom: 0;
 }
-
-/* 
-.btn-outline-primary {
-    color: #79d9ce;
-    border-color: #79d9ceD;
-    width: 100%;
-    border-top: 0;
-}
-
-.btn-outline-success {
-    color: #FF675D;
-    border-color: #FF675D;
-}
-
-.btn-outline-success:hover {
-    border-color: #FF675D;
-    background-color: #FF675D;
-}
-
-.btn-outline-primary:hover {
-    color: #fff;
-    background-color: #FF675D;
-    border-color: #FF675D;
-} */

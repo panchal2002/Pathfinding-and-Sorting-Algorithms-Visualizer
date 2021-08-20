@@ -3,11 +3,6 @@ body {
 	height: 100%;
 }
 
-/* #logo { */
-
-/* max-width: 100px;
-} */
-
 #logo>img {
 	max-width: 170px;
 }
@@ -93,11 +88,6 @@ a:hover {
 	margin-top: 10px;
 }
 
-/* .modal-dialog .modal-content {
-	background-color: #343a40;
-	color: white;
-} */
-
 .wall {
 	transition: background-color 0.1s ease-in-out;
 	background-color: #34495e;
@@ -106,8 +96,6 @@ a:hover {
 
 .weight {
 	transition: background-color 0.1s ease-in-out;
-	/* background-color: cyan;
-	border-color: cyan; */
 	background-image: url(../images/weight.svg);
 	background-size: cover;
 }

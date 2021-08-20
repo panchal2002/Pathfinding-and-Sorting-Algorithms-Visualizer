@@ -521,24 +521,6 @@ async function animateCells() {
 	//console.log("End of animation has been reached!");
 	return new Promise(resolve => resolve(true));
 }
-/*
-async function flash(color){
-	var item = "#logo";
-	var originalColor = $(item).css("color");
-	if (color == "green"){
-		var colorRGB = '40,167,50';
-	} else if (color == "red"){
-		var colorRGB = '255,0,0';
-	}
-	var delay = 1; //ms
-	for (var i = 0.45; i <= 2.6; i += 0.01){
-		$(item).css("color", 'rgba(' + colorRGB + ','+Math.abs(Math.sin(i))+')');
-		await new Promise(resolve => setTimeout(resolve, delay));
-	}
-	$(item).css("color", originalColor);
-	return new Promise(resolve => resolve(true));
-}
-*/
 
 function getDelay() {
 	var delay;
