@@ -320,8 +320,6 @@ function updateStartBtnText() {
 		$("#startBtn").html("Start A*");
 	} else if (algorithm == "Greedy Best-First Search") {
 		$("#startBtn").html("Start Greedy BFS");
-	} else if (algorithm == "Jump Point Search") {
-		$("#startBtn").html("Start JPS");
 	}
 	return;
 }
@@ -400,8 +398,6 @@ function executeAlgo() {
 		var pathFound = AStar();
 	} else if (algorithm == "Greedy Best-First Search") {
 		var pathFound = greedyBestFirstSearch();
-	} else if (algorithm == "Jump Point Search") {
-		var pathFound = jumpPointSearch();
 	}
 	return pathFound;
 }

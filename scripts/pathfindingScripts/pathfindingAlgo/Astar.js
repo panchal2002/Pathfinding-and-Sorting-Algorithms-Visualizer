@@ -31,7 +31,7 @@ function AStar() {
                 prev[m][n] = [i, j];
                 cellsToAnimate.push([[m, n], "searching"]);
             }
-            var newCost = distances[i][j] + Math.abs(endCell[0] - m) + Math.abs(endCell[1] - n);
+            var newCost = distances[m][n] + Math.abs(endCell[0] - m) + Math.abs(endCell[1] - n);
             if (newCost < costs[m][n]) {
                 costs[m][n] = newCost;
                 myHeap.push([newCost, [m, n]]);
